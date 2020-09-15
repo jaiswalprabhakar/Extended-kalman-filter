@@ -1,7 +1,12 @@
 # Extended-kalman-filter
 Kalman Filter for linear systems and extend it to a nonlinear system such as a self-driving car. Apply the Kalman Filter on the data received by IMU, LIDAR and GPS and estimate the co-ordinates of a self-driving car and visualize its real trajectory versus the ground truth trajectory
+
+
+
 Localization: 
          Robot localization is the process of determining where a mobile robot is located with respect to its environment. Localization is one of the most fundamental competencies required by an autonomous robot as the knowledge of the robot’s own location is an essential precursor to making decisions about future actions.
+
+
 Kalman Filter
 Kalman filtering is an algorithm that provides estimates of some unknown variables given the measurements observed over time. Kalman filters have been demonstrating its usefulness in various applications. Kalman filters have relatively simple form and require small computational power. 
 
@@ -48,31 +53,6 @@ At the first filter iteration the initialization outputs are treated as the Prev
 On the next filter iterations, the prediction outputs become the Previous State Estimate and Uncertainty.
 
 
-Sensors Used: 
-LIDAR: 
-             LiDAR works in a similar way to Radar and Sonar yet uses light waves from a laser, instead of radio or sound waves. A LiDAR system calculates how long it takes for the light to hit an object or surface and reflect back to the scanner. The distance is then calculated using the velocity of light. These are known as ‘Time of Flight’ measurements.
-
-LIDAR (Light Detection and Ranging) is an optical remote sensing system which can measure the distance of a target by illuminating it with light. LIDAR technology is being used in Robotics for the perception of the environment as well as object classification. The ability of LIDAR technology to provide 2D elevation maps of the terrain, high precision distance to the ground, and approach velocity can enable safe landing of robotic and manned vehicles with a high degree of precision.
-Another method used to determine distance is the Phase-Shift Method. Instead of using a pulsed laser source, a continuous source is used where the power is modulated at a constant frequency. This means that the input can be looked at like a sine curve with time on the x-axis and laser power on the y-axis. Photodetectors can do more than just detect if there is light, it can also detect the power of light, thus a sine curve of the return signal can be formed. 
-By comparing the phase difference, the difference in radians of the peaks of the waves, the distance to the object can be found with the following equation where d is distance, c is the speed of light, Δϕ is the phase difference, and f is the frequency at which the power was modulated.
-
-With the use of iterative closest point algorithm, we can get x and y axis position data
-which will be used in fusion with other sensor data like IMU and GPS.
- 
-
-
-
-
-
-
-MPU6050:
-MPU6050 sensor module is an integrated 6-axis Motion tracking device.
-It has a 3-axis Gyroscope, 3-axis Accelerometer, Digital Motion Processor and a Temperature sensor, all in a single IC.
-It can accept inputs from other sensors like 3-axis magnetometer or pressure sensor using its Auxiliary I2C bus.
-If external 3-axis magnetometer is connected, it can provide complete 9-axis Motion Fusion output.
-A microcontroller can communicate with this module using I2C communication protocol. Various parameters can be found by reading values from addresses of certain registers using I2C communication.
-Gyroscope and accelerometer reading along X, Y and Z axes are available in 2’s complement form. Temperature reading is also available in signed integer form.
-Gyroscope readings are in degrees per second (dps) unit; Accelerometer readings are in g unit; and Temperature reading is in degrees Celsius.
 
 
 
@@ -85,17 +65,10 @@ Gyroscope readings are in degrees per second (dps) unit; Accelerometer readings 
 
 
 
-Inside MPU 6050:
 
 
 
 
-NEO-6M GPS Receiver Module:
-•	Global Positioning System (GPS) makes use of signals sent by satellites in space and ground stations on Earth to accurately determine its position on Earth.
-•	The NEO-6M GPS receiver module uses USART communication to communicate with microcontroller or PC terminal.
-•	It receives information like latitude, longitude, altitude, UTC time, etc. from the satellites in the form of NMEA string. This string needs to be parsed to extract the information that we want to use.
-•	We are going to display data (latitude, longitude, altitude and time) received by the GPS receiver module on the serial monitor of Arduino.
- 
 
 
 
