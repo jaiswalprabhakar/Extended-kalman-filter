@@ -28,27 +28,48 @@ The dispersion of the distribution is the measurement precision, also known as t
 ONE-DIMENSIONAL KALMAN FILTER:
    
 •	Step 0: Initialization
+
 the initialization performed only once, and it provides two parameters:
+
 o	Initial System State ( x^1,0x^1,0 )
+
 o	Initial State Uncertainty ( p1,0p1,0 )
+
 The initialization is followed by prediction.
+
 •	Step 1: Measurement
+
 The measurement process shall provide two parameters:
+
 o	Measured System State ( znzn )
+
 o	Measurement Uncertainty ( rnrn )
+
 •	Step 2: State Update
 The state update process is responsible for system's current state estimation.
+
 The state update process inputs are:
+
 o	Measured Value ( z1,0z1,0 )
+
 o	The Measurement Uncertainty ( rnrn )
+
 o	Previous System State Estimate ( x^n,n−1x^n,n−1 )
+
 o	Estimate Uncertainty ( pn,n−1pn,n−1 )
+
 Based on the inputs, the state update process calculates the Kalman Gain and provides two outputs:
+
 o	Current System State Estimate ( x^n,nx^n,n )
+
 o	Current State Estimate Uncertainty ( pn,npn,n )
+
 These parameters are the Kalman Filter outputs.
+
 •	Step 3: Prediction
-The prediction process extrapolates the current system state and the uncertainty of the current system state estimate to the next system state, based on the system's dynamic model.
+
+The prediction process extrapolates the current system state and the uncertainty of the current system state estimate to the next system state, based on the system's dynamic 
+model.
 At the first filter iteration the initialization outputs are treated as the Previous State Estimate and Uncertainty.
 On the next filter iterations, the prediction outputs become the Previous State Estimate and Uncertainty.
 
